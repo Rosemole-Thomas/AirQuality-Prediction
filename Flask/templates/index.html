@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Deployment</title>
 
+</head>
+
+
+<style>
+body {
+background-image: url("\home\vuelogix\Downloads\air quality prediction app\NEW_TIME\templates\img4.jpg");
+<!--background-color: #cccccc;-->
+}
+</style>
+<body>
+<!-- <img src="image.png" alt="alternatetext">-->
+<!--background-image: url({{ url_for('static', filename='img/home.jpg') }})-->
+ <div class="login">
+	<h1>Timeseries Forecasting</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+    	<input type="text" name="horizon" placeholder="days" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
